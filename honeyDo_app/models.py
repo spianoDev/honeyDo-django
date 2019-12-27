@@ -8,10 +8,11 @@ class Todo(models.Model):
     person = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 class Item(models.Model):
+    name = models.CharField(default='', max_length=300)
     task = models.ForeignKey(Todo, on_delete=models.CASCADE, related_name='tasks')
 
     def __str__(self):
-        return self.task
+        return self.name
