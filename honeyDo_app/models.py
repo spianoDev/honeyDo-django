@@ -11,8 +11,8 @@ class Todo(models.Model):
         return self.title
 
 class Item(models.Model):
-    name = models.CharField(default='', max_length=300)
-    task = models.ForeignKey(Todo, on_delete=models.CASCADE, related_name='tasks')
+    task = models.CharField(max_length=300)
+    todo = models.ForeignKey(Todo, on_delete=models.CASCADE, related_name='items')
 
     def __str__(self):
-        return self.name
+        return self.task
