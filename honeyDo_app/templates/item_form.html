@@ -1,15 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Honey Todo</h1>
+<h1>Tasks</h1>
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-
-
+    {{ form.as_ul }}
     <button type="submit">Save</button>
 </form>
 {% endblock %}
-
-<!--<a href="{% url 'item_create' %}">-->
-<!--    add task</a>-->

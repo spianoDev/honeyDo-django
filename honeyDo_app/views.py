@@ -28,3 +28,13 @@ def item_list(request):
 def item_detail(request, pk):
     item = Item.objects.get(id = pk)
     return render(request, 'item_detail.html', {'item': item})
+
+def item_create(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            todo = form.save()
+            return redirect('item_detail', pk=item.pk)
+    else:
+        form = ItemForm()
+    return render(request, 'item_form.html', {'form': form})
