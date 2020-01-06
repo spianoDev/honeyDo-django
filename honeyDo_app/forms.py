@@ -11,4 +11,4 @@ class ItemForm(forms.ModelForm):
 
     class Meta:
         model = Item
-        fields = ('task',)
+        fields = ('task', 'todo',)
