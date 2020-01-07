@@ -8,6 +8,10 @@
     <ul>
         {% for item in todo.items.all %}
         <li><a href="{% url 'item_update' pk=item.pk %}">{{ item.task }}</a>
+            <form action="{% url 'item_delete' pk=item.pk %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Remove {{item.task}}">
+            </form>
         <br/> </li>
         {% endfor %}
     </ul>

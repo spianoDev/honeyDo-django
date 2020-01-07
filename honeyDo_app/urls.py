@@ -10,4 +10,6 @@ urlpatterns = [
     path('item/new', views.item_create, name = 'item_create'),
     path('todo/<int:pk>/update', views.todo_update, name = 'todo_update'),
     path('item/<int:pk>/update', views.item_update, name = 'item_update'),
+    path('todo/<int:pk>/delete', views.todo_delete, name = 'todo_delete'),
+    path('item/<int:pk>/delete', views.item_delete, name = 'item_delete'),
 ]

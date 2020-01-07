@@ -32,6 +32,10 @@ def todo_update(request, pk):
         form = TodoForm(instance=todo)
     return render(request, 'todo_form.html', {'form': form})
 
+def todo_delete(request, pk):
+    Todo.objects.get(id=pk).delete()
+    return redirect('todo_list')
+
 def item_list(request):
     items = Item.objects.all()
     return render(request, 'item_list.html', {'items': items})
@@ -60,3 +64,9 @@ def item_update(request, pk):
     else:
         form = ItemForm(instance=item)
     return render(request, 'item_form.html', {'form': form})
+
+def item_delete(request, pk):
+    item = Item.objects.get(pk=pk)
+    parent_id = item.todo.pk
+    item.delete()
+    return redirect('todo_detail', pk = parent_id)
