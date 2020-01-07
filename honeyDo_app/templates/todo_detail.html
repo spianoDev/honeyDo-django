@@ -17,5 +17,9 @@
     </ul>
 </div>
 <a href="{% url 'item_create' %}">add task</a>
+<form action="{% url 'todo_delete' pk=todo.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Remove HoneyDo '{{todo.title}}'">
+</form>
 
 {% endblock %}
