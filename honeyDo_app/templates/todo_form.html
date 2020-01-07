@@ -6,23 +6,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
-
-<ul>
-    <ul>
-        {% for item in todo.items.all %}
-        <li>{{ item.task }}
-            <br/> </li>
-        {% endfor %}
-    </ul>
-<!--    {% if task in todo.items.all > 0 %}-->
-<!--    <li>{{ item.task }}-->
-<!--        <br/> </li>-->
-<!--    {% else %}-->
-<!--    There are no tasks set for this Honey Todo...-->
-<!--    {% endif %}-->
-</ul>
 </form>
 {% endblock %}
 
-<!--<a href="{% url 'item_create' %}">-->
-<!--    add task</a>-->

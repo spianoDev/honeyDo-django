@@ -7,9 +7,11 @@
     <h4>{{todo.person}} will complete these tasks today!</h4>
     <ul>
         {% for item in todo.items.all %}
-        <li>{{ item.task }}
+        <li><a href="{% url 'item_update' pk=item.pk %}">{{ item.task }}</a>
         <br/> </li>
         {% endfor %}
     </ul>
 </div>
+<a href="{% url 'item_create' %}">add task</a>
+
 {% endblock %}

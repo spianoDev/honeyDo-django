@@ -45,7 +45,7 @@ def item_create(request):
         form = ItemForm(request.POST)
         if form.is_valid():
             item = form.save()
-            return redirect('item_detail', pk=item.pk)
+            return redirect('todo_detail', pk = item.todo.pk)
     else:
         form = ItemForm()
     return render(request, 'item_form.html', {'form': form})
@@ -56,7 +56,7 @@ def item_update(request, pk):
         form = ItemForm(request.POST, instance=item)
         if form.is_valid():
             item = form.save()
-            return redirect('item_detail', pk=item.pk)
+            return redirect('todo_detail', pk = item.todo.pk)
     else:
         form = ItemForm(instance=item)
     return render(request, 'item_form.html', {'form': form})
