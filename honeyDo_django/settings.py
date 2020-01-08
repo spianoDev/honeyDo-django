@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 #         default=config('DATABASE_URL')
 #     )
 # }
-DEBUG = True
+DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
