@@ -29,12 +29,11 @@ SECRET_KEY = os.environ['SECRET_KEY']
 #         default=config('DATABASE_URL')
 #     )
 # }
-DEBUG = False
+DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
