@@ -1,1 +1,1 @@
-web: gunicorn honeyDo-django.wsgi 
+web: gunicorn honeyDo_django.wsgi
