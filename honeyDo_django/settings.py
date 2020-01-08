@@ -20,10 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u$q(yte0r2n-66)o$$!fsxgnp(f_^#8s)xb)(v=77m!7kj-%y5'
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -120,5 +126,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'honeyDo_app/static'),
+)
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
