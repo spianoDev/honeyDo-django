@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Honey Todo</h1>
+<h2>Honey Todo</h2>
+<section>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button class="button" type="submit">Save</button>
 </form>
+</section>
 {% endblock %}
 

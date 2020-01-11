@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Tasks</h1>
+<h2>Tasks</h2>
+<section>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_ul }}
-    <button type="submit">Save</button>
+    <button class="button moreRoom" type="submit">Save</button>
 </form>
+</section>
 {% endblock %}
