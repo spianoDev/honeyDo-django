@@ -8,7 +8,7 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
         many = True,
         read_only = True
     )
-    todo_url = serializer.ModelSerializer.serializer_url_field(
+    todo_url = serializers.ModelSerializer.serializer_url_field(
         view_name = 'todo_detail'
     )
     class Meta:
