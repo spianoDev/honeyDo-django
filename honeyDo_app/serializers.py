@@ -13,7 +13,7 @@ class TodoSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Todo
-        fields = ['id', 'title', 'date', 'person', 'todo_detail',]
+        fields = ['id', 'title', 'date', 'person', 'todo_detail', 'tasks']
 
 class ItemSerializer(serializers.ModelSerializer):
 
