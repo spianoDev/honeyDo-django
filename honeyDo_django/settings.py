@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'honeyDo_app',
     'corsheaders',
     'rest_framework',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
