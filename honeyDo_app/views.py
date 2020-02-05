@@ -1,8 +1,22 @@
 from django.shortcuts import render, redirect
 from .models import Todo, Item
 from .forms import TodoForm, ItemForm
+from rest_framework import generics
+from .serializers import TodoSerializer, ItemSerializer
 
 # Create your views here.
+class TodoList(generics.ListCreateAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
+
+class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
+
+class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer
+
 def todo_list(request):
     todos = Todo.objects.all()
     return render(request, 'todo_list.html', {'todos': todos})
